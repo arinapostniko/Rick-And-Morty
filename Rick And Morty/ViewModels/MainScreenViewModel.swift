@@ -5,7 +5,7 @@
 //  Created by Arina Postnikova on 18.08.23.
 //
 
-import Foundation
+import UIKit
 
 class MainScreenViewModel {
     var headerText: Bindable<String> = Bindable("Characters")
