@@ -13,18 +13,28 @@ struct DetailsScreenView: View {
     
     @ObservedObject private var viewModel: DetailsScreenViewModel
     
+    private var backButton: some View {
+        Button(action: {
+            withAnimation {
+                presentationMode.wrappedValue.dismiss()
+            }
+        }) {
+            Image("chevron-left")
+        }
+    }
+    
     init(character: Character) {
         self.character = character
         self._viewModel = ObservedObject(wrappedValue: DetailsScreenViewModel(character: character))
     }
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .topLeading) {
             CustomColor.darkBlue
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
                 VStack {
-                    Spacer().frame(height: 16)
+                    Spacer().frame(height: 64)
                     if let characterImage = viewModel.characterImage {
                         Image(uiImage: characterImage)
                             .resizable()
@@ -67,22 +77,26 @@ struct DetailsScreenView: View {
                         .padding(.top, 8)
                         .padding(.horizontal, 24)
                 }
+                .background(
+                    GeometryReader { geo in
+                        VStack {
+                            Spacer()
+                            HStack {
+                                Spacer()
+                                backButton
+                                    .padding(.top, 8)
+                                    .padding(.leading, 12)
+                                    .frame(
+                                        width: geo.size.width,
+                                        height: geo.size.height,
+                                        alignment: .topLeading
+                                    )
+                            }
+                        }
+                    }
+                )
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: backButton)
-        }
-    }
-    
-    private var backButton: some View {
-        Button(action: {
-            withAnimation {
-                presentationMode.wrappedValue.dismiss()
-            }
-        }) {
-            Image("chevron-left")
-                .padding(.top, 16)
-                .padding(.leading, 24)
+            .navigationBarHidden(true)
         }
     }
 }

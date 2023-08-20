@@ -19,7 +19,6 @@
 		FEE397342A8E2FC900E2FBC8 /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEE397312A8E2FBF00E2FBC8 /* Gilroy-Medium.ttf */; };
 		FEE397352A8E2FCC00E2FBC8 /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEE397322A8E2FBF00E2FBC8 /* Gilroy-SemiBold.ttf */; };
 		FEE397382A8E3FF300E2FBC8 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE397372A8E3FF300E2FBC8 /* Fonts.swift */; };
-		FEE3973A2A8F5FC300E2FBC8 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE397392A8F5FC300E2FBC8 /* MainScreenViewModel.swift */; };
 		FEE3973C2A8F5FED00E2FBC8 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3973B2A8F5FED00E2FBC8 /* Bindable.swift */; };
 		FEE397422A8F6A3A00E2FBC8 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE397412A8F6A3A00E2FBC8 /* CharacterCell.swift */; };
 		FEE397512A8F70B800E2FBC8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE397502A8F70B800E2FBC8 /* DataManager.swift */; };
@@ -53,7 +52,6 @@
 		FEE397322A8E2FBF00E2FBC8 /* Gilroy-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-SemiBold.ttf"; sourceTree = "<group>"; };
 		FEE397362A8E2FD700E2FBC8 /* Rick-And-Morty-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Rick-And-Morty-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FEE397372A8E3FF300E2FBC8 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		FEE397392A8F5FC300E2FBC8 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		FEE3973B2A8F5FED00E2FBC8 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		FEE397412A8F6A3A00E2FBC8 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		FEE397502A8F70B800E2FBC8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				FEE397242A8E1B8300E2FBC8 /* SplashScreenViewModel.swift */,
-				FEE397392A8F5FC300E2FBC8 /* MainScreenViewModel.swift */,
 				FEE397622A92130500E2FBC8 /* DetailsScreenViewModel.swift */,
 			);
 			path = ViewModels;
@@ -312,7 +309,6 @@
 				FEE3972B2A8E21F500E2FBC8 /* MainScreenViewController.swift in Sources */,
 				FEE3970F2A8E004500E2FBC8 /* Rick_And_MortyApp.swift in Sources */,
 				FEE397532A8F71DA00E2FBC8 /* APIData.swift in Sources */,
-				FEE3973A2A8F5FC300E2FBC8 /* MainScreenViewModel.swift in Sources */,
 				FEE3975D2A90B17A00E2FBC8 /* CacheManager.swift in Sources */,
 				FEE397222A8E134700E2FBC8 /* CustomColors.swift in Sources */,
 				FEE3971E2A8E03FA00E2FBC8 /* SplashScreenView.swift in Sources */,

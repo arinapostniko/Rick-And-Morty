@@ -48,7 +48,7 @@ struct InfoView: View {
                         .frame(maxWidth: .infinity, alignment: .trailing)
                         .padding(.trailing, 16)
                         .padding(.top, 16)
-                    Text(type)
+                    Text(type.isEmpty ? "None" : type)
                         .font(.custom(Fonts.medium, size: 16))
                         .frame(maxWidth: .infinity, alignment: .trailing)
                         .padding(.trailing, 16)

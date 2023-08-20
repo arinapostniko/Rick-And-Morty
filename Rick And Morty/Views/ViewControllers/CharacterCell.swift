@@ -35,6 +35,13 @@ class CharacterCell: UICollectionViewCell {
         }
     }
     
+    private let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .medium)
+        indicator.color = .white
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        return indicator
+    }()
+    
     // MARK: - Override Methods
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,6 +67,8 @@ class CharacterCell: UICollectionViewCell {
         backgroundColor = UIColor(CustomColor.darkGrey)
         addSubview(characterImageView)
         addSubview(nameLabel)
+        addSubview(activityIndicator)
+        activityIndicator.isHidden = true
     }
     
     private func setupConstraints() {
@@ -69,6 +78,9 @@ class CharacterCell: UICollectionViewCell {
             characterImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             characterImageView.heightAnchor.constraint(equalToConstant: 140),
             characterImageView.widthAnchor.constraint(equalToConstant: 140),
+            
+            activityIndicator.centerXAnchor.constraint(equalTo: characterImageView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: characterImageView.centerYAnchor),
             
             nameLabel.topAnchor.constraint(equalTo: characterImageView.bottomAnchor, constant: 16),
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
@@ -98,6 +110,8 @@ class CharacterCell: UICollectionViewCell {
     private func updateImage() {
         guard let imageURL = imageURL else { return }
         print("Updating image for URL: \(imageURL)")
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
         getImage(from: imageURL) { [weak self] result in
             switch result {
             case .success(let image):
@@ -105,10 +119,15 @@ class CharacterCell: UICollectionViewCell {
                     if imageURL == self?.imageURL {
                         print("Setting image for URL: \(imageURL)")
                         self?.characterImageView.image = image
+                        self?.activityIndicator.isHidden = true
+                        self?.activityIndicator.stopAnimating()
                     }
                 }
+                
             case .failure(let error):
                 print(error)
+                self?.activityIndicator.isHidden = true
+                self?.activityIndicator.stopAnimating()
             }
         }
     }
