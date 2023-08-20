@@ -36,9 +36,3 @@ struct EpisodesCell: View {
         }
     }
 }
-
-//struct EpisodesCell_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EpisodesCell()
-//    }
-//}

@@ -111,9 +111,3 @@ struct DetailsScreenView: View {
         }
     }
 }
-
-//struct DetailsScreenView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DetailsScreenView()
-//    }
-//}

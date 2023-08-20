@@ -46,9 +46,3 @@ struct OriginView: View {
         }
     }
 }
-
-//struct OriginView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        OriginView()
-//    }
-//}

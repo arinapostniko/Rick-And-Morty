@@ -65,20 +65,6 @@ class MainScreenViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    
-    private func setupNavigationBar() {
-        title = "Characters"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
-        let navBarAppearance = UINavigationBarAppearance()
-        
-        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        navBarAppearance.backgroundColor = .black
-        
-        navigationController?.navigationBar.standardAppearance = navBarAppearance
-    }
 }
 
 // MARK: - UICollectionView
