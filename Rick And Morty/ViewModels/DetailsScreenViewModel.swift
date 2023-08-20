@@ -15,6 +15,7 @@ class DetailsScreenViewModel: ObservableObject {
     @Published var type: String
     @Published var gender: String
     @Published var location: String
+    @Published var episodes: [Episode] = []
     
     init(character: Character) {
         self.characterName = character.name
@@ -34,5 +35,27 @@ class DetailsScreenViewModel: ObservableObject {
             }
         }
         .resume()
+        
+        loadEpisodes(character.episode)
+    }
+    
+    func loadEpisodes(_ episodeURLs: [String]) {
+        for episodeURL in episodeURLs {
+            if let url = URL(string: episodeURL) {
+                URLSession.shared.dataTask(with: url) { data, _, error in
+                    if let data = data {
+                        do {
+                            let episode = try JSONDecoder().decode(Episode.self, from: data)
+                            DispatchQueue.main.async {
+                                self.episodes.append(episode)
+                            }
+                        } catch {
+                            print("Error decoding episode:", error)
+                        }
+                    }
+                }
+                .resume()
+            }
+        }
     }
 }

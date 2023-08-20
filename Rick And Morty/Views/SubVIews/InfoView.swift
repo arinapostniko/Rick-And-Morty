@@ -24,20 +24,20 @@ struct InfoView: View {
                 VStack(alignment: .leading, spacing: 16) {
                     Text("Species:")
                         .font(.custom(Fonts.medium, size: 16))
-                        .foregroundColor(CustomColor.grey)
+                        .foregroundColor(CustomColor.lightGrey)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 16)
                         .padding(.top, 16)
                     
                     Text("Type:")
                         .font(.custom(Fonts.medium, size: 16))
-                        .foregroundColor(CustomColor.grey)
+                        .foregroundColor(CustomColor.lightGrey)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 16)
                     
                     Text("Gender:")
                         .font(.custom(Fonts.medium, size: 16))
-                        .foregroundColor(CustomColor.grey)
+                        .foregroundColor(CustomColor.lightGrey)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 16)
                         .padding(.bottom, 16)
