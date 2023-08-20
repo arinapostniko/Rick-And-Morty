@@ -11,4 +11,6 @@ struct CustomColor {
     static let darkBlue = Color("Dark Blue")
     static let darkGrey = Color("Dark Grey")
     static let green = Color("Green")
+    static let grey = Color("Grey")
+    static let moreDarkGrey = Color("More Dark Grey")
 }

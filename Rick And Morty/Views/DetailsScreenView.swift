@@ -22,31 +22,49 @@ struct DetailsScreenView: View {
         ZStack {
             CustomColor.darkBlue
                 .edgesIgnoringSafeArea(.all)
-            VStack {
-                Spacer().frame(height: 16)
-                if let characterImage = viewModel.characterImage {
-                    Image(uiImage: characterImage)
-                        .resizable()
-                        .frame(width: 148, height: 148)
-                        .background(Color.gray)
-                        .cornerRadius(16)
-                        .padding(.horizontal, 113)
-                } else {
-                    ProgressView()
+            ScrollView {
+                VStack {
+                    Spacer().frame(height: 16)
+                    if let characterImage = viewModel.characterImage {
+                        Image(uiImage: characterImage)
+                            .resizable()
+                            .frame(width: 148, height: 148)
+                            .background(Color.gray)
+                            .cornerRadius(16)
+                            .padding(.horizontal, 113)
+                    } else {
+                        ProgressView()
+                    }
+                    Text(viewModel.characterName)
+                        .font(.custom(Fonts.bold, size: 22))
+                        .padding(.top, 24)
+                    Text(viewModel.characterStatus)
+                        .font(.custom(Fonts.medium, size: 16))
+                        .foregroundColor(CustomColor.green)
+                        .padding(.top, 8)
+                    Text("Info")
+                        .font(.custom(Fonts.semiBold, size: 17))
+                        .padding(.top, 24)
+                        .padding(.leading, 24)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    InfoView(species: viewModel.species, type: viewModel.type, gender: viewModel.gender)
+                        .padding(.top, 16)
+                        .padding(.horizontal, 24)
+                    Text("Origin")
+                        .font(.custom(Fonts.semiBold, size: 17))
+                        .padding(.top, 24)
+                        .padding(.leading, 24)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    OriginView(location: viewModel.location)
+                        .padding(.top, 16)
+                        .padding(.horizontal, 24)
+                    Spacer()
                 }
-                Text(viewModel.characterName)
-                    .font(Font.custom(Fonts.bold, size: 22))
-                    .padding(.top, 24)
-                Text(viewModel.characterStatus)
-                    .font(Font.custom(Fonts.medium, size: 16))
-                    .foregroundColor(CustomColor.green)
-                    .padding(.top, 8)
-                Spacer()
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: backButton)
         }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: backButton)
     }
     
     private var backButton: some View {
