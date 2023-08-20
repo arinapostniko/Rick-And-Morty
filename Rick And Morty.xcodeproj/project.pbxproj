@@ -31,6 +31,7 @@
 		FEE3975D2A90B17A00E2FBC8 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3975C2A90B17A00E2FBC8 /* CacheManager.swift */; };
 		FEE3975F2A90E4BE00E2FBC8 /* DetailsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3975E2A90E4BE00E2FBC8 /* DetailsScreenView.swift */; };
 		FEE397612A920C1E00E2FBC8 /* MainScreenViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE397602A920C1E00E2FBC8 /* MainScreenViewControllerRepresentable.swift */; };
+		FEE397632A92130500E2FBC8 /* DetailsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE397622A92130500E2FBC8 /* DetailsScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		FEE3975C2A90B17A00E2FBC8 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		FEE3975E2A90E4BE00E2FBC8 /* DetailsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenView.swift; sourceTree = "<group>"; };
 		FEE397602A920C1E00E2FBC8 /* MainScreenViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		FEE397622A92130500E2FBC8 /* DetailsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			children = (
 				FEE397242A8E1B8300E2FBC8 /* SplashScreenViewModel.swift */,
 				FEE397392A8F5FC300E2FBC8 /* MainScreenViewModel.swift */,
+				FEE397622A92130500E2FBC8 /* DetailsScreenViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				FEE397382A8E3FF300E2FBC8 /* Fonts.swift in Sources */,
 				FEE397422A8F6A3A00E2FBC8 /* CharacterCell.swift in Sources */,
 				FEE397112A8E004500E2FBC8 /* MainScreenView.swift in Sources */,
+				FEE397632A92130500E2FBC8 /* DetailsScreenViewModel.swift in Sources */,
 				FEE3972B2A8E21F500E2FBC8 /* MainScreenViewController.swift in Sources */,
 				FEE3970F2A8E004500E2FBC8 /* Rick_And_MortyApp.swift in Sources */,
 				FEE397532A8F71DA00E2FBC8 /* APIData.swift in Sources */,

@@ -9,9 +9,14 @@ import SwiftUI
 
 struct DetailsScreenView: View {
     let character: Character
-    
     @Environment(\.presentationMode) private var presentationMode
-    @State private var characterImage: UIImage?
+    
+    @ObservedObject private var viewModel: DetailsScreenViewModel
+    
+    init(character: Character) {
+        self.character = character
+        self._viewModel = ObservedObject(wrappedValue: DetailsScreenViewModel(character: character))
+    }
     
     var body: some View {
         ZStack {
@@ -19,7 +24,7 @@ struct DetailsScreenView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Spacer().frame(height: 16)
-                if let characterImage = characterImage {
+                if let characterImage = viewModel.characterImage {
                     Image(uiImage: characterImage)
                         .resizable()
                         .frame(width: 148, height: 148)
@@ -29,10 +34,10 @@ struct DetailsScreenView: View {
                 } else {
                     ProgressView()
                 }
-                Text(character.name)
+                Text(viewModel.characterName)
                     .font(Font.custom(Fonts.bold, size: 22))
                     .padding(.top, 24)
-                Text(character.status)
+                Text(viewModel.characterStatus)
                     .font(Font.custom(Fonts.medium, size: 16))
                     .foregroundColor(CustomColor.green)
                     .padding(.top, 8)
@@ -42,9 +47,6 @@ struct DetailsScreenView: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: backButton)
-        .onAppear {
-            loadImage()
-        }
     }
     
     private var backButton: some View {
@@ -57,18 +59,6 @@ struct DetailsScreenView: View {
                 .padding(.top, 16)
                 .padding(.leading, 24)
         }
-    }
-    
-    private func loadImage() {
-        guard let imageURL = URL(string: character.image) else { return }
-        
-        URLSession.shared.dataTask(with: imageURL) { data, _, error in
-            if let data = data, let image = UIImage(data: data) {
-                DispatchQueue.main.async {
-                    characterImage = image
-                }
-            }
-        }.resume()
     }
 }
 
