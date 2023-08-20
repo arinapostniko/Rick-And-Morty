@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "707DA172-9C1E-4A46-A66B-D85136F07D2E"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9C1A73E-205F-4A3A-9EEF-DD6B415FC155"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rick And Morty/Views/ViewControllers/MainScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C9C1A73E-205F-4A3A-9EEF-DD6B415FC155 - 62882c02c1b46526"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rick_And_Morty.MainScreenViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "Rick And Morty"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arinapostniko/xcode/Rick%20And%20Morty/Rick%20And%20Morty/Views/ViewControllers/MainScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "1544">
+               </Location>
+               <Location
+                  uuid = "C9C1A73E-205F-4A3A-9EEF-DD6B415FC155 - 62882c02c1b46526"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Rick_And_Morty.MainScreenViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "Rick And Morty"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arinapostniko/xcode/Rick%20And%20Morty/Rick%20And%20Morty/Views/ViewControllers/MainScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "1608">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

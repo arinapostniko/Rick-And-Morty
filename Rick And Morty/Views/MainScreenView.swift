@@ -9,8 +9,10 @@ import SwiftUI
 
 struct MainScreenView: View {
     var body: some View {
-        UIKitWrapper()
-            .edgesIgnoringSafeArea(.all)
+        NavigationView {
+            MainScreenViewControllerRepresentable()
+                .edgesIgnoringSafeArea(.all)
+        }
     }
 }
 

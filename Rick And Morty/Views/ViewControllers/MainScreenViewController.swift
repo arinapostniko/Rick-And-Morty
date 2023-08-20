@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import SwiftUI
 
 class MainScreenViewController: UIViewController {
     // MARK: - Public Properties
     let headerLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Gilroy-Bold", size: 28)
+        label.font = UIFont(name: Fonts.bold, size: 28)
         label.textColor = .white
         return label
     }()
@@ -96,7 +97,14 @@ extension MainScreenViewController: UICollectionViewDataSource {
 
 extension MainScreenViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedCharacter = apiData?.results[indexPath.row]
+        if let selectedCharacter = apiData?.results[indexPath.row] {
+            let detailsView = DetailsScreenView(character: selectedCharacter)
+            let hostingController = UIHostingController(rootView: detailsView)
+            
+            if let navigationController = navigationController {
+                navigationController.pushViewController(hostingController, animated: true)
+            }
+        }
     }
 }
 

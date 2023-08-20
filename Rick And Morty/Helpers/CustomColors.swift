@@ -10,4 +10,5 @@ import SwiftUI
 struct CustomColor {
     static let darkBlue = Color("Dark Blue")
     static let darkGrey = Color("Dark Grey")
+    static let green = Color("Green")
 }

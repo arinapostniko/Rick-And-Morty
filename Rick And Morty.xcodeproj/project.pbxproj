@@ -14,7 +14,6 @@
 		FEE3971E2A8E03FA00E2FBC8 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3971D2A8E03FA00E2FBC8 /* SplashScreenView.swift */; };
 		FEE397222A8E134700E2FBC8 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE397212A8E134700E2FBC8 /* CustomColors.swift */; };
 		FEE397252A8E1B8300E2FBC8 /* SplashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE397242A8E1B8300E2FBC8 /* SplashScreenViewModel.swift */; };
-		FEE397272A8E21A400E2FBC8 /* UIKitWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE397262A8E21A400E2FBC8 /* UIKitWrapper.swift */; };
 		FEE3972B2A8E21F500E2FBC8 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3972A2A8E21F500E2FBC8 /* MainScreenViewController.swift */; };
 		FEE397332A8E2FC600E2FBC8 /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEE397302A8E2FBF00E2FBC8 /* Gilroy-Bold.ttf */; };
 		FEE397342A8E2FC900E2FBC8 /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEE397312A8E2FBF00E2FBC8 /* Gilroy-Medium.ttf */; };
@@ -30,6 +29,8 @@
 		FEE397592A8F722200E2FBC8 /* Origin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE397582A8F722200E2FBC8 /* Origin.swift */; };
 		FEE3975B2A8F723700E2FBC8 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3975A2A8F723700E2FBC8 /* Episode.swift */; };
 		FEE3975D2A90B17A00E2FBC8 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3975C2A90B17A00E2FBC8 /* CacheManager.swift */; };
+		FEE3975F2A90E4BE00E2FBC8 /* DetailsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE3975E2A90E4BE00E2FBC8 /* DetailsScreenView.swift */; };
+		FEE397612A920C1E00E2FBC8 /* MainScreenViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE397602A920C1E00E2FBC8 /* MainScreenViewControllerRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +42,6 @@
 		FEE3971D2A8E03FA00E2FBC8 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		FEE397212A8E134700E2FBC8 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		FEE397242A8E1B8300E2FBC8 /* SplashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewModel.swift; sourceTree = "<group>"; };
-		FEE397262A8E21A400E2FBC8 /* UIKitWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitWrapper.swift; sourceTree = "<group>"; };
 		FEE3972A2A8E21F500E2FBC8 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		FEE397302A8E2FBF00E2FBC8 /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.ttf"; sourceTree = "<group>"; };
 		FEE397312A8E2FBF00E2FBC8 /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Medium.ttf"; sourceTree = "<group>"; };
@@ -58,6 +58,8 @@
 		FEE397582A8F722200E2FBC8 /* Origin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Origin.swift; sourceTree = "<group>"; };
 		FEE3975A2A8F723700E2FBC8 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		FEE3975C2A90B17A00E2FBC8 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		FEE3975E2A90E4BE00E2FBC8 /* DetailsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenView.swift; sourceTree = "<group>"; };
+		FEE397602A920C1E00E2FBC8 /* MainScreenViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewControllerRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				FEE397292A8E21CD00E2FBC8 /* ViewControllers */,
 				FEE3971D2A8E03FA00E2FBC8 /* SplashScreenView.swift */,
 				FEE397102A8E004500E2FBC8 /* MainScreenView.swift */,
+				FEE3975E2A90E4BE00E2FBC8 /* DetailsScreenView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -134,9 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				FEE397212A8E134700E2FBC8 /* CustomColors.swift */,
-				FEE397262A8E21A400E2FBC8 /* UIKitWrapper.swift */,
 				FEE397372A8E3FF300E2FBC8 /* Fonts.swift */,
 				FEE3973B2A8F5FED00E2FBC8 /* Bindable.swift */,
+				FEE397602A920C1E00E2FBC8 /* MainScreenViewControllerRepresentable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -271,7 +274,6 @@
 				FEE3973C2A8F5FED00E2FBC8 /* Bindable.swift in Sources */,
 				FEE397382A8E3FF300E2FBC8 /* Fonts.swift in Sources */,
 				FEE397422A8F6A3A00E2FBC8 /* CharacterCell.swift in Sources */,
-				FEE397272A8E21A400E2FBC8 /* UIKitWrapper.swift in Sources */,
 				FEE397112A8E004500E2FBC8 /* MainScreenView.swift in Sources */,
 				FEE3972B2A8E21F500E2FBC8 /* MainScreenViewController.swift in Sources */,
 				FEE3970F2A8E004500E2FBC8 /* Rick_And_MortyApp.swift in Sources */,
@@ -283,7 +285,9 @@
 				FEE397572A8F720F00E2FBC8 /* Character.swift in Sources */,
 				FEE3975B2A8F723700E2FBC8 /* Episode.swift in Sources */,
 				FEE397252A8E1B8300E2FBC8 /* SplashScreenViewModel.swift in Sources */,
+				FEE3975F2A90E4BE00E2FBC8 /* DetailsScreenView.swift in Sources */,
 				FEE397552A8F71EE00E2FBC8 /* Info.swift in Sources */,
+				FEE397612A920C1E00E2FBC8 /* MainScreenViewControllerRepresentable.swift in Sources */,
 				FEE397592A8F722200E2FBC8 /* Origin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

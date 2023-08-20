@@ -8,6 +8,7 @@
 import UIKit
 
 class CharacterCell: UICollectionViewCell {
+    // MARK: - Public Properties
     let characterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -19,13 +20,14 @@ class CharacterCell: UICollectionViewCell {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Gilroy-Semibold", size: 17)
+        label.font = UIFont(name: Fonts.semiBold, size: 17)
         label.textColor = .white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
+    // MARK: - Private Properties
     private var imageURL: URL? {
         didSet {
             characterImageView.image = nil
@@ -33,6 +35,7 @@ class CharacterCell: UICollectionViewCell {
         }
     }
     
+    // MARK: - Override Methods
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -45,12 +48,14 @@ class CharacterCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Public Methods
     func configure(with character: Character?) {
         nameLabel.text = character?.name
         print("Configuring cell with name: \(character?.name ?? "No name")")
         imageURL = URL(string: character?.image ?? "")
     }
     
+    // MARK: - Private Methods
     private func setupUI() {
         backgroundColor = UIColor(CustomColor.darkGrey)
         addSubview(characterImageView)

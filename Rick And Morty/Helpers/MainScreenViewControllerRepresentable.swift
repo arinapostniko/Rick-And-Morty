@@ -1,20 +1,23 @@
 //
-//  UIKitWrapper.swift
+//  MainScreenViewControllerRepresentable.swift
 //  Rick And Morty
 //
-//  Created by Arina Postnikova on 17.08.23.
+//  Created by Arina Postnikova on 20.08.23.
 //
 
-import SwiftUI
+import Foundation
+
 import UIKit
+import SwiftUI
 
-struct UIKitWrapper: UIViewControllerRepresentable {
+struct MainScreenViewControllerRepresentable: UIViewControllerRepresentable {
     typealias UIViewControllerType = MainScreenViewController
-
+    
     func makeUIViewController(context: Context) -> MainScreenViewController {
-        return MainScreenViewController()
+        let viewController = MainScreenViewController()
+        return viewController
     }
-
+    
     func updateUIViewController(_ uiViewController: MainScreenViewController, context: Context) {
         
     }
