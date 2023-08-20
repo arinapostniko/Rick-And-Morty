@@ -47,8 +47,6 @@ class CharacterCell: UICollectionViewCell {
         super.init(frame: frame)
         setupUI()
         setupConstraints()
-        layer.cornerRadius = 16
-        layer.masksToBounds = true
     }
     
     required init?(coder: NSCoder) {
@@ -69,6 +67,8 @@ class CharacterCell: UICollectionViewCell {
         addSubview(nameLabel)
         addSubview(activityIndicator)
         activityIndicator.isHidden = true
+        layer.cornerRadius = 16
+        layer.masksToBounds = true
     }
     
     private func setupConstraints() {

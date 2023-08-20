@@ -45,15 +45,12 @@ class MainScreenViewController: UIViewController {
         
         view.addSubview(collectionView)
         collectionView.register(CharacterCell.self, forCellWithReuseIdentifier: "CharacterCell")
-        setupConstraints()
         collectionView.delegate = self
         collectionView.dataSource = self
         
         view.addSubview(activityIndicator)
-        NSLayoutConstraint.activate([
-            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
+        
+        setupConstraints()
     }
     
     private func setupConstraints() {
@@ -63,6 +60,11 @@ class MainScreenViewController: UIViewController {
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
 }

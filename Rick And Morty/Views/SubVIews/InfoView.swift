@@ -11,7 +11,6 @@ struct InfoView: View {
     let species: String
     let type: String
     let gender: String
-
     
     var body: some View {
         ZStack {
@@ -52,6 +51,7 @@ struct InfoView: View {
                         .font(.custom(Fonts.medium, size: 16))
                         .frame(maxWidth: .infinity, alignment: .trailing)
                         .padding(.trailing, 16)
+                        .multilineTextAlignment(.trailing)
                     Text(gender)
                         .font(.custom(Fonts.medium, size: 16))
                         .frame(maxWidth: .infinity, alignment: .trailing)
