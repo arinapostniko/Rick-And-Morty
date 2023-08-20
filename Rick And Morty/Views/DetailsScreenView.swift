@@ -23,6 +23,17 @@ struct DetailsScreenView: View {
         }
     }
     
+    private func statusColor(for status: String) -> Color {
+        switch status.lowercased() {
+        case "alive":
+            return CustomColor.green
+        case "dead":
+            return .red
+        default:
+            return CustomColor.lightGrey
+        }
+    }
+    
     init(character: Character) {
         self.character = character
         self._viewModel = ObservedObject(wrappedValue: DetailsScreenViewModel(character: character))
@@ -50,7 +61,7 @@ struct DetailsScreenView: View {
                         .padding(.top, 24)
                     Text(viewModel.characterStatus)
                         .font(.custom(Fonts.medium, size: 16))
-                        .foregroundColor(CustomColor.green)
+                        .foregroundColor(statusColor(for: viewModel.characterStatus))
                         .padding(.top, 8)
                     Text("Info")
                         .font(.custom(Fonts.semiBold, size: 17))
