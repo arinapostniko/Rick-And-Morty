@@ -12,9 +12,13 @@ struct EpisodesView: View {
     
     var body: some View {
         VStack {
-            ForEach(episodes, id: \.self) { episode in
-                EpisodesCell(episode: episode)
-                    .padding(.top, 8)
+            if episodes.isEmpty {
+                ProgressView()
+            } else {
+                ForEach(episodes, id: \.self) { episode in
+                    EpisodesCell(episode: episode)
+                        .padding(.top, 8)
+                }
             }
         }
     }
