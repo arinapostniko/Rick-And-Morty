@@ -35,7 +35,7 @@ struct OriginView: View {
                 .frame(width: 64)
                 .padding(.trailing, 8)
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(location)
+                    Text(viewModel.location)
                         .font(.custom(Fonts.semiBold, size: 17))
                     Text(viewModel.locationType)
                         .foregroundColor(CustomColor.green)
