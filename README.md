@@ -11,5 +11,5 @@ This is a mini-app to view characters from the animated series "Rick and Morty".
 
 ## About
 
-An open API was used to receive data: https://rickandmortyapi.com/api<br/>
+An open API was used to receive data: https://rickandmortyapi.com/api.
 The character list screen is implemented using UIKit. Layout by code, without third-party libraries. The detailed character screen is implemented on SwiftUI.
