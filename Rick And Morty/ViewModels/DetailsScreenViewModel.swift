@@ -15,6 +15,7 @@ class DetailsScreenViewModel: ObservableObject {
     @Published var type: String
     @Published var gender: String
     @Published var location: String
+    @Published var locationType: String
     @Published var episodes: [Episode] = []
     
     init(character: Character) {
@@ -24,6 +25,7 @@ class DetailsScreenViewModel: ObservableObject {
         self.type = character.type
         self.gender = character.gender
         self.location = character.location.name
+        self.locationType = ""
         
         guard let imageURL = URL(string: character.image) else { return }
         
@@ -35,6 +37,22 @@ class DetailsScreenViewModel: ObservableObject {
             }
         }
         .resume()
+        
+        if let locationURL = URL(string: character.location.url) {
+            URLSession.shared.dataTask(with: locationURL) { data, _, error in
+                if let data = data {
+                    do {
+                        let location = try JSONDecoder().decode(Location.self, from: data)
+                        DispatchQueue.main.async {
+                            self.locationType = location.type
+                        }
+                    } catch {
+                        print("Error decoding location:", error)
+                    }
+                }
+            }
+            .resume()
+        }
         
         loadEpisodes(character.episode)
     }

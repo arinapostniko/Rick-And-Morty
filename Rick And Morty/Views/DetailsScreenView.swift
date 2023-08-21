@@ -76,7 +76,7 @@ struct DetailsScreenView: View {
                         .padding(.top, 24)
                         .padding(.leading, 24)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    OriginView(location: viewModel.location)
+                    OriginView(viewModel: viewModel, location: viewModel.locationType)
                         .padding(.top, 8)
                         .padding(.horizontal, 24)
                     Text("Episodes")

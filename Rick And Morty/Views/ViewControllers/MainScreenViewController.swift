@@ -10,7 +10,7 @@ import SwiftUI
 
 class MainScreenViewController: UIViewController {
     // MARK: - Private Properties
-    private var apiData: APIData?
+    private var allCharacters: [Character] = []
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -36,7 +36,7 @@ class MainScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        fetchCharacters(from: Links.rickAndMortyAPI.rawValue)
+        fetchAllCharacters()
     }
     
     // MARK: - Private Methods
@@ -72,7 +72,7 @@ class MainScreenViewController: UIViewController {
 // MARK: - UICollectionView
 extension MainScreenViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        apiData?.results.count ?? 0
+        allCharacters.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -82,7 +82,7 @@ extension MainScreenViewController: UICollectionViewDataSource {
         else {
             return UICollectionViewCell()
         }
-        let character = apiData?.results[indexPath.row]
+        let character = allCharacters[indexPath.row]
         cell.configure(with: character)
         return cell
     }
@@ -90,30 +90,44 @@ extension MainScreenViewController: UICollectionViewDataSource {
 
 extension MainScreenViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let selectedCharacter = apiData?.results[indexPath.row] {
-            let detailsView = DetailsScreenView(character: selectedCharacter)
-            let hostingController = UIHostingController(rootView: detailsView)
-            if let navigationController = navigationController {
-                navigationController.pushViewController(hostingController, animated: true)
-            }
+        let selectedCharacter = allCharacters[indexPath.row]
+        let detailsView = DetailsScreenView(character: selectedCharacter)
+        let hostingController = UIHostingController(rootView: detailsView)
+        if let navigationController = navigationController {
+            navigationController.pushViewController(hostingController, animated: true)
         }
     }
 }
 
 // MARK: - DataManager
 extension MainScreenViewController {
-    private func fetchCharacters(from url: String) {
+    private func fetchAllCharacters() {
         activityIndicator.startAnimating()
-        DataManager.shared.fetch(APIData.self, from: url) { [weak self] result in
-            self?.activityIndicator.stopAnimating()
-            switch result {
-            case .success(let apiData):
-                self?.apiData = apiData
-                print("Data loaded: \(apiData.results.count) characters")
-                self?.collectionView.reloadData()
-            case .failure(let error):
-                print(error)
+        
+        var currentPage = 1
+        
+        func fetchPage() {
+            let url = Links.rickAndMortyAPI.rawValue + "?page=\(currentPage)"
+            DataManager.shared.fetch(APIData.self, from: url) { [weak self] result in
+                guard let self = self else { return }
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                    switch result {
+                    case .success(let rickAndMorty):
+                        self.allCharacters.append(contentsOf: rickAndMorty.results)
+                        self.collectionView.reloadData()
+                        if rickAndMorty.results.isEmpty {
+                            return
+                        }
+                        currentPage += 1
+                        fetchPage()
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
             }
         }
+        
+        fetchPage()
     }
 }

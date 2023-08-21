@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct OriginView: View {
+    @ObservedObject var viewModel: DetailsScreenViewModel
+    
     let location: String
     
     var body: some View {
@@ -35,7 +37,7 @@ struct OriginView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     Text(location)
                         .font(.custom(Fonts.semiBold, size: 17))
-                    Text("Planet")
+                    Text(viewModel.locationType)
                         .foregroundColor(CustomColor.green)
                         .font(.custom(Fonts.medium, size: 13))
                 }

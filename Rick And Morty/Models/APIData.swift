@@ -8,6 +8,5 @@
 import Foundation
 
 struct APIData: Codable {
-    var info: Info
     var results: [Character]
 }
